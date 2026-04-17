@@ -64,7 +64,8 @@ public class WindController : MonoBehaviour
     {
         Gizmos.color = arrowColor;
         Vector3 origin = transform.position;
-        Vector3 direction = windBaseOrientation.normalized * arrowLength;
+        Vector3 dir = (windZone != null) ? windZone.transform.forward : windBaseOrientation.normalized;
+        Vector3 direction = dir * arrowLength;
         Vector3 end = origin + direction;
 
         Gizmos.DrawLine(origin, end);
