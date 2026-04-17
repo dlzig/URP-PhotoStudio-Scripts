@@ -4,6 +4,7 @@ using VRM;
 public class WindController : MonoBehaviour
 {
     [Header("風向き")]
+    public WindZone windZone;
     public Vector3 windBaseOrientation = new Vector3(1f, 0f, 0f);
 
     [Header("1/f ゆらぎ設定")]
@@ -48,7 +49,8 @@ public class WindController : MonoBehaviour
         // 重力ベクトル（0, -1, 0）に風ベクトルを加算してから正規化
         // 参考コードの applyWindForce の設計を踏襲
         Vector3 gravity = new Vector3(0f, -1f, 0f);
-        Vector3 wind = windBaseOrientation.normalized * windStrength;
+        Vector3 direction = (windZone != null) ? windZone.transform.forward : windBaseOrientation.normalized;
+        Vector3 wind = direction * windStrength;
         Vector3 combinedDir = (gravity + wind).normalized;
 
         foreach (var bone in springBones)
