@@ -1,6 +1,9 @@
 // TurntableRotator.cs
 using UnityEngine;
 
+namespace Nekometrica
+{
+
 public class TurntableRotator : MonoBehaviour
 {
     [Header("回転設定")]
@@ -44,4 +47,6 @@ public class TurntableRotator : MonoBehaviour
         float angle = startAngle + t * 360f;
         ApplyRotation(angle);
     }
+}
+
 }
