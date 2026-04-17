@@ -1,6 +1,9 @@
 using UnityEditor;
 using UnityEngine;
 
+namespace Nekometrica
+{
+
 [CustomEditor(typeof(WindController))]
 public class WindControllerEditor : Editor
 {
@@ -23,4 +26,6 @@ public class WindControllerEditor : Editor
 
         serializedObject.ApplyModifiedProperties();
     }
+}
+
 }

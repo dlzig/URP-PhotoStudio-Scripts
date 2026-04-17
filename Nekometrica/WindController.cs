@@ -1,6 +1,9 @@
 using UnityEngine;
 using VRM;
 
+namespace Nekometrica
+{
+
 public class WindController : MonoBehaviour
 {
     [Header("風向き")]
@@ -77,4 +80,6 @@ public class WindController : MonoBehaviour
         Gizmos.DrawLine(end, end - direction.normalized * arrowLength * 0.3f + up);
         Gizmos.DrawLine(end, end - direction.normalized * arrowLength * 0.3f - up);
     }
+}
+
 }
